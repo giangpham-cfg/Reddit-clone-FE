@@ -1,6 +1,10 @@
 import { Modal } from "reactstrap";
 import "./Login.css";
-export default function Login({ isOpenLoginModal, closeLoginModal }) {
+export default function Login({
+  isOpenLoginModal,
+  closeLoginModal,
+  openRegisterModal,
+}) {
   return (
     <Modal
       isOpen={isOpenLoginModal}
@@ -23,7 +27,10 @@ export default function Login({ isOpenLoginModal, closeLoginModal }) {
           />
           <button className="login-button">Login</button>
           <div className="signup-link">
-            New to Reddit? <a href="">Sign Up</a>
+            New to Reddit?
+            <a href="#" onClick={() => openRegisterModal()}>
+              Sign Up
+            </a>
           </div>
         </form>
       </div>

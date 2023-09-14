@@ -3,12 +3,26 @@ import { IoIosSearch } from "react-icons/io";
 import { IoMdHome } from "react-icons/io";
 import { useState } from "react";
 import Login from "./Login";
+import Register from "./Register";
 
-export default function Navbar() {
+export default function Navbar({ token, setToken, user, setUser }) {
   const [isOpenLoginModal, setIsOpenLoginModal] = useState(false);
+  const [isOpenRegisterModal, setIsOpenRegisterModal] = useState(false);
 
-  const closeLoginModal = () => {
+  const openLoginModal = () => {
+    setIsOpenLoginModal(true);
+    setIsOpenRegisterModal(false);
+  };
+
+  const openRegisterModal = () => {
+    setIsOpenRegisterModal(true);
     setIsOpenLoginModal(false);
+    console.log("Opening Register Modal");
+  };
+
+  const closeModals = () => {
+    setIsOpenLoginModal(false);
+    setIsOpenRegisterModal(false);
   };
 
   return (
@@ -32,13 +46,24 @@ export default function Navbar() {
             />
           </div>
         </form>
-        <div className="link login" onClick={() => setIsOpenLoginModal(true)}>
-          Log In
-        </div>
+        {!user.id ? (
+          <div className="link login" onClick={() => openLoginModal()}>
+            Log In
+          </div>
+        ) : (
+          <span>Welcome {user.username}</span>
+        )}
       </div>
       <Login
         isOpenLoginModal={isOpenLoginModal}
-        closeLoginModal={closeLoginModal}
+        closeLoginModal={closeModals}
+        openRegisterModal={openRegisterModal}
+      />
+      <Register
+        isOpenRegisterModal={isOpenRegisterModal}
+        closeRegisterModal={closeModals}
+        openLoginModal={openLoginModal}
+        setToken={setToken}
       />
     </>
   );

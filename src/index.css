@@ -20,9 +20,14 @@ body {
 
 .post-container {
   border: 1px solid #cccccc;
+  border-radius: 5px;
   padding: 10px;
   width: 50vw;
   background-color: #ffffff;
+}
+
+.post-container:hover {
+  border: 1px solid #838587;
 }
 
 .subreddit {
@@ -60,6 +65,10 @@ body {
   height: 40px;
 }
 
+.input:hover {
+  border: 1px solid #0279d3;
+}
+
 .glass-icon {
   color: #757575;
   font-size: 30px;
@@ -94,4 +103,8 @@ body {
   font-size: 14px;
   font-weight: 100;
   cursor: pointer;
+}
+
+.login:hover {
+  background-color: brown;
 }
