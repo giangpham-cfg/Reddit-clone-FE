@@ -1,0 +1,79 @@
+/* .login-modal-container {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.login-modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+} */
+
+.login-modal-content {
+  padding: 20px;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+}
+
+.login-text {
+  padding-left: 12%;
+  margin-top: 40px;
+}
+
+.login-input {
+  background-color: #f6f7f8;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  font-size: 14px;
+  width: 90%;
+}
+
+.login-modal-container {
+  width: 30% !important;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.login-button {
+  width: 90%;
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  color: #ffffff;
+  background-color: #d93b01;
+  margin: 20px 0;
+}
+
+.signup-link {
+  font-size: 12px;
+  margin-bottom: 30px;
+}
