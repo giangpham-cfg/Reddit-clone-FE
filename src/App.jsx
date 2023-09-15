@@ -12,7 +12,8 @@ export default function App() {
     const res = await fetch(`${API}/posts`);
     const info = await res.json();
     setPosts(info.posts);
-    console.log(posts);
+
+    console.log(info);
   }
   useEffect(() => {
     fetchPosts();
@@ -32,7 +33,7 @@ export default function App() {
       },
     });
     const info = await res.json();
-    console.log("check", info);
+    // console.log("check", info);
     if (info.success) {
       setUser(info.user);
     }
@@ -41,11 +42,11 @@ export default function App() {
     fetchUser();
   }, [token]);
 
-  console.log("check token", token);
+  console.log(posts);
 
   return (
     <>
-      <Navbar user={user} token={token} setToken={setToken} setUser={setUser} />
+      <Navbar user={user} setToken={setToken} setUser={setUser} />
       <Outlet context={{ posts }} />
     </>
   );

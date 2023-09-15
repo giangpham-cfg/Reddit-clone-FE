@@ -34,6 +34,8 @@ export default function Register({
     localStorage.setItem("token", info.token);
     navigate("/");
 
+    setPassword("");
+    setUsername("");
     closeRegisterModal();
   }
 
@@ -67,7 +69,7 @@ export default function Register({
           />
           <button className="login-button">Sign Up</button>
           <div className="signup-link">
-            Have an account?
+            Already a redditor?
             <a href="#" onClick={() => openLoginModal()}>
               Log In
             </a>
