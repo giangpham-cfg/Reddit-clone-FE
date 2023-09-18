@@ -56,12 +56,15 @@ export default function Navbar({ setToken, user, setUser }) {
             Log In
           </div>
         ) : (
-          <div className="already-login">
-            <span>Welcome {user.username}</span>
-            <Link className="logout" onClick={handleLogout} to={"/"}>
-              Log Out
-            </Link>
-          </div>
+          <>
+            <div>+</div>
+            <div className="already-login">
+              <span>Welcome {user.username}</span>
+              <Link className="logout" onClick={handleLogout} to={"/"}>
+                Log Out
+              </Link>
+            </div>
+          </>
         )}
       </div>
       <Login

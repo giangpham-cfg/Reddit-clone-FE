@@ -35,7 +35,7 @@ export default function Home() {
         </div>
       </Link>
 
-      {/* {posts.map((post) => {
+      {posts.map((post) => {
         return (
           <Link
             style={{ textDecoration: "none" }}
@@ -54,14 +54,20 @@ export default function Home() {
                 <TbArrowBigDown />
               </div>
             </div>
-            <div className="">
+            <div className="post-content">
               <p className="subreddit">r/{post.subreddit.name}</p>
               <p className="title">{post.title}</p>
               <p className="text">{post.text}</p>
+              <div className="comment-container">
+                <div className="comment-">
+                  <FaRegCommentAlt />
+                </div>
+                <div className="comment">23 comments</div>
+              </div>
             </div>
-          </Link> */}
-      {/* ); */}
-      {/* })} */}
+          </Link>
+        );
+      })}
     </div>
   );
 }

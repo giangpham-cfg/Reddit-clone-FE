@@ -40,6 +40,13 @@ export default function Login({
     setUsername("");
     closeLoginModal();
   }
+
+  function handleCloseModal() {
+    setUsername("");
+    setPassword("");
+    setError("");
+    closeLoginModal();
+  }
   return (
     <Modal
       isOpen={isOpenLoginModal}
@@ -48,7 +55,7 @@ export default function Login({
       centered
     >
       <div className="login-modal-content">
-        <span className="close" onClick={() => closeLoginModal()}>
+        <span className="close" onClick={handleCloseModal}>
           X
         </span>
         <br />
@@ -61,6 +68,7 @@ export default function Login({
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
+          <div className="error">{error}</div>
           <input
             className="login-input"
             type="password"

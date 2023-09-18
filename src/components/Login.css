@@ -48,3 +48,9 @@
   font-size: 12px;
   margin-bottom: 30px;
 }
+
+.error {
+  padding-left: 8%;
+  font-size: 14px;
+  color: red;
+}
