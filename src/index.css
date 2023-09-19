@@ -4,6 +4,7 @@ body {
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: #dae0e6;
+  font-size: 12px;
 }
 
 .home-container {
@@ -13,10 +14,6 @@ body {
   align-items: center;
   gap: 20px;
 }
-
-/* .p {
-  color: #1c1c1c;
-} */
 
 .post-container {
   display: flex;
@@ -46,83 +43,6 @@ body {
 }
 
 .text {
-  font-size: 13px;
-}
-
-.input-box {
-  border: none;
-  background-color: #f6f7f8;
-  font-size: 12px;
-  outline: none;
-}
-
-.input {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  border: 1px solid #edeff1;
-  width: 400px;
-  padding-left: 5px;
-  background-color: #f6f7f8;
-  border-radius: 30px;
-  height: 40px;
-}
-
-.input:hover {
-  border: 1px solid #0279d3;
-}
-
-.glass-icon {
-  color: #757575;
-  font-size: 30px;
-  padding-bottom: 5px;
-}
-
-.link {
-  text-decoration: none;
-  color: #1c1c1c;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.home-icon {
-  font-size: 30px;
-}
-
-.navbar-container {
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 5px 0;
-}
-
-.login {
-  background-color: #d93b01;
-  color: #ffffff;
-  padding: 10px 15px;
-  border-radius: 30px;
-  font-size: 14px;
-  font-weight: 100;
-  cursor: pointer;
-}
-
-.login:hover {
-  background-color: brown;
-}
-
-.already-login {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-}
-
-.logout {
-  text-decoration: none;
-  color: #1c1c1c;
   font-size: 13px;
 }
 

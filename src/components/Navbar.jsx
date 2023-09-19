@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 import { IoMdHome } from "react-icons/io";
+import { IoIosAdd } from "react-icons/io";
 import { useState } from "react";
 import Login from "./Login";
 import Register from "./Register";
+import "./Navbar.css";
 
 export default function Navbar({ setToken, user, setUser }) {
   const [isOpenLoginModal, setIsOpenLoginModal] = useState(false);
@@ -57,7 +59,12 @@ export default function Navbar({ setToken, user, setUser }) {
           </div>
         ) : (
           <>
-            <div>+</div>
+            <Link className="link" to={"/submit"}>
+              <div className="add-post">
+                <IoIosAdd />
+                <span className="icon-text">Create Post</span>
+              </div>
+            </Link>
             <div className="already-login">
               <span>Welcome {user.username}</span>
               <Link className="logout" onClick={handleLogout} to={"/"}>
