@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       // { path: "register", element: <Register /> },
       { path: "posts/:postId", element: <Post /> },
       { path: "submit", element: <CreatePost /> },
-      { path: "r/:name", element: <Subreddit /> },
+      { path: "subreddits/:name", element: <Subreddit /> },
     ],
   },
 ]);
