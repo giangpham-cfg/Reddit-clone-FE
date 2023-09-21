@@ -17,9 +17,9 @@
 .select-community {
   margin-top: 15px;
   width: 20vw;
-  padding: 10px;
-  border: 1px solid #edeff1;
   border-radius: 5px;
+  outline: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
 }
 
 .post-box-container {
@@ -72,8 +72,9 @@
   gap: 7px;
   flex-direction: column;
   width: 100%;
-  padding: 0 15px;
+  padding: 15px;
   align-items: flex-end;
+  border: 1px solid #edeff1;
 }
 
 .main-text {

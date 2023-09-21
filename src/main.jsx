@@ -7,7 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home.jsx";
 import Post from "./components/Post.jsx";
 import CreatePost from "./components/CreatePost.jsx";
-import CreateCommunity from "./components/CreateCommunity.jsx";
+import Subreddit from "./components/Subreddit.jsx";
 // import Login from "./components/Login.jsx";
 import Register from "./components/Register.jsx";
 
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       // { path: "register", element: <Register /> },
       { path: "posts/:postId", element: <Post /> },
       { path: "submit", element: <CreatePost /> },
-      { path: "r/:name", element: <CreateCommunity /> },
+      { path: "r/:name", element: <Subreddit /> },
     ],
   },
 ]);

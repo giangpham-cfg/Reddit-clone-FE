@@ -4,10 +4,12 @@ import { useState, useEffect } from "react";
 import { API } from "./api";
 
 export default function App() {
+  const [subreddits, setSubreddits] = useState([]);
   const [token, setToken] = useState("");
   const [user, setUser] = useState({});
 
   const [posts, setPosts] = useState([]);
+
   async function fetchPosts() {
     const res = await fetch(`${API}/posts`);
     const info = await res.json();
@@ -15,8 +17,17 @@ export default function App() {
 
     console.log(info);
   }
+
+  async function fetchSubreddits() {
+    const res = await fetch(`${API}/subreddits`);
+    const info = await res.json();
+    if (info.success) {
+      setSubreddits(info.subreddits);
+    }
+  }
   useEffect(() => {
     fetchPosts();
+    fetchSubreddits();
   }, []);
 
   async function fetchUser() {
@@ -47,7 +58,7 @@ export default function App() {
   return (
     <>
       <Navbar user={user} setToken={setToken} setUser={setUser} />
-      <Outlet context={{ posts }} />
+      <Outlet context={{ posts, subreddits }} />
     </>
   );
 }

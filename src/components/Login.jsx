@@ -29,6 +29,7 @@ export default function Login({
       }),
     });
     const info = await res.json();
+    console.log("check info", info);
     if (!info.success) {
       return setError(info.error);
     }

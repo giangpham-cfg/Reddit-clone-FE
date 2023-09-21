@@ -39,6 +39,13 @@ export default function Register({
     closeRegisterModal();
   }
 
+  function handleCloseModal() {
+    setUsername("");
+    setPassword("");
+    setError("");
+    closeRegisterModal();
+  }
+
   return (
     <Modal
       isOpen={isOpenRegisterModal}
@@ -47,7 +54,7 @@ export default function Register({
       centered
     >
       <div className="login-modal-content">
-        <span className="close" onClick={() => closeRegisterModal()}>
+        <span className="close" onClick={handleCloseModal}>
           X
         </span>
         <br />
@@ -60,6 +67,7 @@ export default function Register({
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
+          <div className="error">{error}</div>
           <input
             className="login-input"
             type="password"
