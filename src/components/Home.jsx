@@ -1,13 +1,16 @@
-import { Link, useOutletContext } from "react-router-dom";
+import { Link, useOutletContext, useNavigate } from "react-router-dom";
 import { TbArrowBigUp } from "react-icons/tb";
 import { TbArrowBigDown } from "react-icons/tb";
 import { FaRegCommentAlt } from "react-icons/fa";
 
 export default function Home() {
   const { posts } = useOutletContext();
+
+  const navigate = useNavigate();
+
   return (
     <div className="home-container">
-      <Link
+      {/* <Link
         style={{ textDecoration: "none" }}
         className="post-container"
         // key={post.id}
@@ -33,7 +36,7 @@ export default function Home() {
             <div className="comment">23 comments</div>
           </div>
         </div>
-      </Link>
+      </Link> */}
 
       {posts.map((post) => {
         return (
@@ -55,14 +58,24 @@ export default function Home() {
               </div>
             </div>
             <div className="post-content">
-              <p className="subreddit">r/{post.subreddit.name}</p>
+              <p className="subreddit">
+                r/{post.subreddit.name}
+                <span className="post-by">
+                  . Posted by u/{post.user.username}
+                </span>
+              </p>
               <p className="title">{post.title}</p>
               <p className="text">{post.text}</p>
               <div className="comment-container">
-                <div className="comment-">
+                <div className="comment-icon">
                   <FaRegCommentAlt />
                 </div>
-                <div className="comment">23 comments</div>
+                <div
+                  className="comment"
+                  onClick={navigate(`/posts/${post.id}`)}
+                >
+                  {post.children.length} comments
+                </div>
               </div>
             </div>
           </Link>

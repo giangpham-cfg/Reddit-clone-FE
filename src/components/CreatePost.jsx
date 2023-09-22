@@ -13,7 +13,7 @@ export default function CreatePost() {
   const [error, setError] = useState("");
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
-  const [subredditId, setSubredditId] = useState("");
+  const [subreddit, setSubreddit] = useState({});
 
   const navigate = useNavigate();
 
@@ -29,7 +29,7 @@ export default function CreatePost() {
       (subreddit) => subreddit.name === value
     );
     if (findSubreddit) {
-      setSubredditId(findSubreddit.id);
+      setSubreddit(findSubreddit);
     }
   };
 
@@ -44,14 +44,14 @@ export default function CreatePost() {
       body: JSON.stringify({
         title,
         text,
-        subredditId,
+        subredditId: subreddit.id,
       }),
     });
     const info = await res.json();
     if (!info.success) {
       return setError(info.error);
     }
-    navigate("/");
+    navigate(`/subreddits/${subreddit.name}`);
     setText("");
     setTitle("");
     fetchPosts();

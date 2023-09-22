@@ -38,14 +38,21 @@ export default function Subreddit() {
                   </div>
                 </div>
                 <div className="post-content">
-                  <p className="subreddit">r/{post.subreddit.name}</p>
+                  <p className="subreddit">
+                    r/{post.subreddit.name}{" "}
+                    <span className="post-by">
+                      . Posted by u/{post.user.username}
+                    </span>
+                  </p>
                   <p className="title">{post.title}</p>
                   <p className="text">{post.text}</p>
                   <div className="comment-container">
-                    <div className="comment-">
+                    <div className="comment-icon">
                       <FaRegCommentAlt />
                     </div>
-                    <div className="comment">23 comments</div>
+                    <div className="comment">
+                      {post.children.length} comments
+                    </div>
                   </div>
                 </div>
               </Link>
