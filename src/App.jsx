@@ -58,7 +58,7 @@ export default function App() {
   return (
     <>
       <Navbar user={user} setToken={setToken} setUser={setUser} />
-      <Outlet context={{ posts, subreddits }} />
+      <Outlet context={{ posts, subreddits, fetchPosts, token }} />
     </>
   );
 }

@@ -19,7 +19,7 @@ export default function Subreddit() {
       <div>
         {filteredPosts.map((post) => {
           return (
-            <div className="post-subreddit-container">
+            <div key={post.id} className="post-subreddit-container">
               <Link
                 style={{ textDecoration: "none" }}
                 className="post-container"

@@ -4,15 +4,18 @@ import { IoIosLink } from "react-icons/io";
 import { LiaPollSolid } from "react-icons/lia";
 import "./CreatePost.css";
 import { Select } from "antd";
-import { Tabs } from "antd";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { API } from "../api";
 
 export default function CreatePost() {
-  const { subreddits } = useOutletContext();
+  const { subreddits, token, fetchPosts } = useOutletContext();
+  const [error, setError] = useState("");
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
-  const [subreddit, setSubreddit] = useState("");
+  const [subredditId, setSubredditId] = useState("");
+
+  const navigate = useNavigate();
 
   const options = [];
   for (let i = 0; i < subreddits.length; i++) {
@@ -22,8 +25,38 @@ export default function CreatePost() {
     });
   }
   const handleChangeOption = (value) => {
-    setSubreddit(value);
+    const findSubreddit = subreddits.find(
+      (subreddit) => subreddit.name === value
+    );
+    if (findSubreddit) {
+      setSubredditId(findSubreddit.id);
+    }
   };
+
+  const handleSubmitPost = async (e) => {
+    e.preventDefault();
+    const res = await fetch(`${API}/posts`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        title,
+        text,
+        subredditId,
+      }),
+    });
+    const info = await res.json();
+    if (!info.success) {
+      return setError(info.error);
+    }
+    navigate("/");
+    setText("");
+    setTitle("");
+    fetchPosts();
+  };
+
   return (
     <div className="create-post-container">
       <div className="main-title">Creat a post</div>
@@ -32,7 +65,7 @@ export default function CreatePost() {
         style={{
           width: "40%",
         }}
-        placeholder="Choose a community"
+        placeholder="Choose a subreddit"
         onChange={handleChangeOption}
         options={options}
       />
@@ -63,7 +96,7 @@ export default function CreatePost() {
             <div className="function-name">Poll</div>
           </div>
         </div>
-        <form className="post-form">
+        <form className="post-form" onSubmit={handleSubmitPost}>
           <input
             className="input-text"
             type="text"
@@ -79,6 +112,7 @@ export default function CreatePost() {
           />
           <button className="post-button">Post</button>
         </form>
+        <div className="error-post">{error}</div>
       </div>
     </div>
   );
