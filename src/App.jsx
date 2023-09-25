@@ -53,12 +53,69 @@ export default function App() {
     fetchUser();
   }, [token]);
 
-  console.log(posts);
+  async function handleUpvote(post) {
+    const upvote = post.upvotes.find((upvote) => upvote.userId === user.id);
+    let res;
+    if (upvote) {
+      res = await fetch(`${API}/votes/upvotes/${post.id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+    } else {
+      res = await fetch(`${API}/votes/upvotes/${post.id}`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+    }
+    const info = await res.json();
+    fetchPosts();
+  }
+
+  async function handleDownvote(post) {
+    const downvote = post.downvotes.find(
+      (downvote) => downvote.userId === user.id
+    );
+    let res;
+    if (downvote) {
+      res = await fetch(`${API}/votes/downvotes/${post.id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+    } else {
+      res = await fetch(`${API}/votes/downvotes/${post.id}`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+    }
+    const info = await res.json();
+    fetchPosts();
+  }
 
   return (
     <>
       <Navbar user={user} setToken={setToken} setUser={setUser} />
-      <Outlet context={{ posts, subreddits, fetchPosts, token }} />
+      <Outlet
+        context={{
+          posts,
+          subreddits,
+          fetchPosts,
+          token,
+          handleDownvote,
+          handleUpvote,
+        }}
+      />
     </>
   );
 }

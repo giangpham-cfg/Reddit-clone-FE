@@ -9,7 +9,7 @@ import Post from "./components/Post.jsx";
 import CreatePost from "./components/CreatePost.jsx";
 import Subreddit from "./components/Subreddit.jsx";
 // import Login from "./components/Login.jsx";
-import Register from "./components/Register.jsx";
+// import Register from "./components/Register.jsx";
 
 const router = createBrowserRouter([
   {

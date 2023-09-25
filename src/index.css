@@ -17,17 +17,10 @@ body {
 
 .post-container {
   display: flex;
-  /* gap: 10px; */
-  border: 1px solid #cccccc;
-  border-radius: 5px;
-  /* padding: 10px; */
+  border-radius: 0 5px 5px 0;
   width: 50vw;
   background-color: #ffffff;
   color: #1c1c1c;
-}
-
-.post-container:hover {
-  border: 1px solid #838587;
 }
 
 .subreddit {
@@ -50,7 +43,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
   padding: 0 10px;
   background-color: #f8f9fa;
   border-radius: 5px 0 0 5px;
@@ -64,6 +56,15 @@ body {
 .arrow-icon {
   font-size: 24px;
   color: #888a8c;
+  cursor: pointer;
+}
+
+.upvote:hover {
+  color: red;
+}
+
+.downvote:hover {
+  color: #0279d3;
 }
 
 .post-content {
@@ -89,4 +90,15 @@ body {
 .post-by {
   color: #787c7e;
   font-weight: normal;
+}
+
+.each-post-container {
+  margin-bottom: 10px;
+  display: flex;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+.each-post-container:hover {
+  border: 1px solid #838587;
 }
