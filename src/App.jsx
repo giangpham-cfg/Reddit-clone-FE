@@ -114,6 +114,7 @@ export default function App() {
           token,
           handleDownvote,
           handleUpvote,
+          user,
         }}
       />
     </>

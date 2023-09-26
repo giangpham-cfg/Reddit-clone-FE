@@ -9,6 +9,7 @@ export default function Home() {
       {posts.map((post) => {
         return (
           <EachPost
+            key={post.id}
             post={post}
             handleDownvote={handleDownvote}
             handleUpvote={handleUpvote}

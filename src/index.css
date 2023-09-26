@@ -5,6 +5,8 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: #dae0e6;
   font-size: 12px;
+  height: 100vh;
+  width: 100vw;
 }
 
 .home-container {
@@ -93,7 +95,6 @@ body {
 }
 
 .each-post-container {
-  margin-bottom: 10px;
   display: flex;
   border: 1px solid #cccccc;
   border-radius: 5px;
