@@ -3,6 +3,7 @@ import EachPost from "./EachPost";
 import "./Post.css";
 import { useState } from "react";
 import { API } from "../api";
+import Comment from "./Comment";
 
 export default function Post() {
   const { posts, handleUpvote, handleDownvote, user, fetchPosts, token } =
@@ -56,6 +57,20 @@ export default function Post() {
             />
             <button className="comment-button">Comment</button>
           </form>
+        </div>
+        <div className="all-comment-container">
+          {findpost &&
+            findpost.children &&
+            findpost.children.map((post) => (
+              <Comment
+                key={post.id}
+                post={post}
+                fetchPosts={fetchPosts}
+                handleDownvote={handleDownvote}
+                handleUpvote={handleUpvote}
+                token={token}
+              />
+            ))}
         </div>
       </div>
     </div>

@@ -1,0 +1,14 @@
+.reply-button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.cancel-button {
+  border-radius: 30px;
+  border: none;
+  padding: 10px;
+  font-weight: 600;
+  margin-top: 10px;
+  background-color: #888888;
+  color: white;
+}

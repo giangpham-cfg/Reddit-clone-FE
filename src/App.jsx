@@ -55,9 +55,20 @@ export default function App() {
 
   async function handleUpvote(post) {
     const upvote = post.upvotes.find((upvote) => upvote.userId === user.id);
+    const downvote = post.downvotes.find(
+      (downvote) => downvote.userId === user.id
+    );
     let res;
     if (upvote) {
       res = await fetch(`${API}/votes/upvotes/${post.id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+    } else if (downvote) {
+      res = await fetch(`${API}/votes/downvotes/${post.id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -81,9 +92,18 @@ export default function App() {
     const downvote = post.downvotes.find(
       (downvote) => downvote.userId === user.id
     );
+    const upvote = post.upvotes.find((upvote) => upvote.userId === user.id);
     let res;
     if (downvote) {
       res = await fetch(`${API}/votes/downvotes/${post.id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+    } else if (upvote) {
+      res = await fetch(`${API}/votes/upvotes/${post.id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

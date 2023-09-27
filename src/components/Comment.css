@@ -1,0 +1,53 @@
+.top-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 20px;
+  border-left: 1px solid #888a8c;
+  padding-left: 30px;
+  width: 100%;
+}
+
+.user-comment {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.edit-icon {
+  font-size: 18px;
+  color: #888a8c;
+}
+
+/* .text-comment {
+  padding-left: 10px;
+} */
+
+.comment-function {
+  display: flex;
+  /* padding-left: 5px; */
+}
+
+.vote-comment-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.reply-delete {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #888a8c;
+}
+
+.comment-function {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* svg {
+  vertical-align: baseline;
+} */

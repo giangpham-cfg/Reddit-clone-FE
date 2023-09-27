@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { TbArrowBigUp } from "react-icons/tb";
 import { TbArrowBigDown } from "react-icons/tb";
 import { FaRegCommentAlt } from "react-icons/fa";
 
 export default function EachPost({ handleDownvote, handleUpvote, post }) {
+  const navigate = useNavigate();
   return (
     <div key={post.id} className="each-post-container">
       <div className="vote-container">
