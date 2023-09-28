@@ -8,6 +8,8 @@ import Comment from "./Comment";
 export default function Post() {
   const { posts, handleUpvote, handleDownvote, user, fetchPosts, token } =
     useOutletContext();
+
+  // console.log("check userId in Post", user.id);
   const { postId } = useParams();
   const findpost = posts.find((post) => post.id === postId);
   const [text, setText] = useState("");
@@ -30,6 +32,7 @@ export default function Post() {
     console.log("child in Post", info);
     if (info.success) {
       fetchPosts();
+      setText("");
     }
   };
 
@@ -46,7 +49,18 @@ export default function Post() {
           </div>
         )}
         <div className="comment-box">
-          <p>Comment as {user.username}</p>
+          <p>
+            Comment as
+            <span
+              style={{
+                color: "#0279d3",
+                fontWeight: "600",
+                paddingLeft: "5px",
+              }}
+            >
+              {user.username}
+            </span>
+          </p>
           <form className="comment-form" onSubmit={handleFirstComment}>
             <textarea
               className="input-text-comment"
@@ -69,6 +83,7 @@ export default function Post() {
                 handleDownvote={handleDownvote}
                 handleUpvote={handleUpvote}
                 token={token}
+                user={user}
               />
             ))}
         </div>
