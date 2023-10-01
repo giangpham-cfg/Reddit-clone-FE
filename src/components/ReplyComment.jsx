@@ -7,9 +7,9 @@ export default function ReplyComment({
   child,
   fetchPosts,
   token,
-  //   onReplySubmitted,
 }) {
   const [text, setText] = useState("");
+  const [error, setError] = useState("");
   const handleReplyComment = async (e) => {
     e.preventDefault();
     const res = await fetch(`${API}/posts`, {
@@ -26,11 +26,11 @@ export default function ReplyComment({
     });
     const info = await res.json();
     console.log("child", info);
-    if (info.success) {
-      fetchPosts();
-      setIsReplyingComment(false);
-      //   onReplySubmitted();
+    if (!info.success) {
+      return setError("You must login to reply on a comment!");
     }
+    fetchPosts();
+    setIsReplyingComment(false);
   };
   return (
     <>
@@ -52,6 +52,7 @@ export default function ReplyComment({
           <button className="comment-button">Reply</button>
         </div>
       </form>
+      <div className="error-post">{error}</div>
     </>
   );
 }

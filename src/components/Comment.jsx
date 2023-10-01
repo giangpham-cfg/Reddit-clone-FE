@@ -33,7 +33,6 @@ export default function Comment({
       fetchPosts();
     }
   };
-  console.log("check post", post);
   return (
     <>
       <div className="top-container">

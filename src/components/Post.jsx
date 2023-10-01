@@ -13,6 +13,7 @@ export default function Post() {
   const { postId } = useParams();
   const findpost = posts.find((post) => post.id === postId);
   const [text, setText] = useState("");
+  const [error, setError] = useState("");
 
   const handleFirstComment = async (e) => {
     e.preventDefault();
@@ -30,10 +31,11 @@ export default function Post() {
     });
     const info = await res.json();
     console.log("child in Post", info);
-    if (info.success) {
-      fetchPosts();
-      setText("");
+    if (!info.success) {
+      return setError("You must login to comment on a post!");
     }
+    fetchPosts();
+    setText("");
   };
 
   return (
@@ -71,6 +73,7 @@ export default function Post() {
             />
             <button className="comment-button">Comment</button>
           </form>
+          <div className="error-post">{error}</div>
         </div>
         <div className="all-comment-container">
           {findpost &&

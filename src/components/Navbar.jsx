@@ -66,7 +66,7 @@ export default function Navbar({ setToken, user, setUser }) {
               </div>
             </Link>
             <div className="already-login">
-              <span>Welcome {user.username}</span>
+              <span style={{ color: "#d93b01" }}>Welcome {user.username}</span>
               <Link className="logout" onClick={handleLogout} to={"/"}>
                 Log Out
               </Link>

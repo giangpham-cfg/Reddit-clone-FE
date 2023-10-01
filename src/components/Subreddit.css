@@ -21,3 +21,9 @@
   color: white;
   width: 100px;
 }
+
+.subreddit-posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

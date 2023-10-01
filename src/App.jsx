@@ -7,6 +7,8 @@ export default function App() {
   const [subreddits, setSubreddits] = useState([]);
   const [token, setToken] = useState("");
   const [user, setUser] = useState({});
+  // const [isUpvote, setIsUpvote] = useState(false);
+  // const [isDownvote, setIsDownvote] = useState(false);
 
   const [posts, setPosts] = useState([]);
 
@@ -135,6 +137,7 @@ export default function App() {
           handleDownvote,
           handleUpvote,
           user,
+          fetchSubreddits,
         }}
       />
     </>

@@ -14,7 +14,7 @@ export default function Subreddit() {
         <div className="subreddit-name">{name}</div>
         <button className="join">Join</button>
       </div>
-      <div>
+      <div className="subreddit-posts-container">
         {filteredPosts.map((post) => {
           return (
             <EachPost

@@ -20,9 +20,16 @@ body {
   gap: 20px;
 }
 
+.right-part-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
 .post-container {
   display: flex;
-  border-radius: 0 5px 5px 0;
+  border-radius: 5px;
   width: 50vw;
   background-color: #ffffff;
   color: #1c1c1c;
@@ -79,17 +86,19 @@ body {
 .comment {
   font-size: 10px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .comment-container {
   color: #888a8c;
   display: flex;
-  gap: 5px;
+  gap: 10px;
   align-items: center;
 }
 
 .comment-icon {
   font-size: 20px;
+  cursor: pointer;
 }
 
 .post-by {
@@ -122,6 +131,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: 600;
 }
 
 .edit-delete-icon {
@@ -133,14 +143,14 @@ body {
 .create-subreddit-button {
   padding: 5px;
   border-radius: 10px;
-  border: 1px solid black;
-  /* background-color: #888888;
-  color: white; */
+  border: none;
   font-weight: 600;
   font-size: 12px;
+  background-color: #d93b01;
+  color: #ffffff;
 }
 
 .create-subreddit-button:hover {
-  background-color: #888888;
+  background-color: brown;
   color: white;
 }
