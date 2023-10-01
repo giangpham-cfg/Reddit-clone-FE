@@ -7,7 +7,6 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { API } from "../api";
 import { useState } from "react";
 import EditPost from "./EditPost";
-// import { useState } from "react";
 
 export default function EachPost({
   handleDownvote,
@@ -71,7 +70,6 @@ export default function EachPost({
           <div className="comment-icon">
             <FaRegCommentAlt />
           </div>
-          {/* <div className="bottom-part-container"> */}
           <div
             className="comment"
             onClick={() => navigate(`/posts/${post.id}`)}

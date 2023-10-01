@@ -3,7 +3,8 @@ import "./Subreddit.css";
 import EachPost from "./EachPost";
 
 export default function Subreddit() {
-  const { posts, handleUpvote, handleDownvote } = useOutletContext();
+  const { posts, handleUpvote, handleDownvote, user, token, fetchPosts } =
+    useOutletContext();
   const { name } = useParams();
   const filteredPosts = posts.filter((post) => post.subreddit.name === name);
   console.log("check filtered", filteredPosts);
@@ -22,6 +23,9 @@ export default function Subreddit() {
               post={post}
               handleDownvote={handleDownvote}
               handleUpvote={handleUpvote}
+              user={user}
+              token={token}
+              fetchPosts={fetchPosts}
             />
           );
         })}

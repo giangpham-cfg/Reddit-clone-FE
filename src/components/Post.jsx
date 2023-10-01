@@ -8,8 +8,6 @@ import Comment from "./Comment";
 export default function Post() {
   const { posts, handleUpvote, handleDownvote, user, fetchPosts, token } =
     useOutletContext();
-
-  // console.log("check userId in Post", user.id);
   const { postId } = useParams();
   const findpost = posts.find((post) => post.id === postId);
   const [text, setText] = useState("");
@@ -47,6 +45,9 @@ export default function Post() {
               post={findpost}
               handleUpvote={handleUpvote}
               handleDownvote={handleDownvote}
+              user={user}
+              token={token}
+              fetchPosts={fetchPosts}
             />
           </div>
         )}
