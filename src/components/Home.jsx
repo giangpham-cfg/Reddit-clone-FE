@@ -16,6 +16,8 @@ export default function Home() {
     token,
     fetchSubreddits,
     fetchPosts,
+    isDownvote,
+    isUpvote,
   } = useOutletContext();
   const navigate = useNavigate();
 

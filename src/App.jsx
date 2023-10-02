@@ -77,6 +77,13 @@ export default function App() {
           "Content-Type": "application/json",
         },
       });
+      res = await fetch(`${API}/votes/upvotes/${post.id}`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
     } else {
       res = await fetch(`${API}/votes/upvotes/${post.id}`, {
         method: "POST",
@@ -107,6 +114,13 @@ export default function App() {
     } else if (upvote) {
       res = await fetch(`${API}/votes/upvotes/${post.id}`, {
         method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+      res = await fetch(`${API}/votes/downvotes/${post.id}`, {
+        method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",

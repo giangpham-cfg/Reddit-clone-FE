@@ -75,7 +75,15 @@ body {
   color: red;
 }
 
+.upvote-on {
+  color: red;
+}
+
 .downvote:hover {
+  color: #0279d3;
+}
+
+.downvote-on {
   color: #0279d3;
 }
 

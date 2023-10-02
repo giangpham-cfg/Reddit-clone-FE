@@ -17,6 +17,8 @@ export default function EachPost({
   fetchPosts,
 }) {
   const navigate = useNavigate();
+  const [upvote, setUpvote] = useState(false);
+  const [downvote, setDownvote] = useState(false);
   const [isOpenEditPostModal, setIsOpenEditPostModal] = useState(false);
 
   const handleDeletePost = async (postId) => {
@@ -32,18 +34,47 @@ export default function EachPost({
       fetchPosts();
     }
   };
+
+  const handleClickUpvote = () => {
+    if (!token) {
+      alert("You must login to give this post a vote!");
+    } else {
+      handleUpvote(post);
+      if (downvote) {
+        setDownvote(false);
+      }
+      setUpvote(!upvote);
+    }
+  };
+
+  const handleClickDownvote = () => {
+    if (!token) {
+      alert("You must login to give this post a vote!");
+    } else {
+      handleDownvote(post);
+      if (upvote) {
+        setUpvote(false);
+      }
+      setDownvote(!downvote);
+    }
+  };
   return (
     <div key={post.id} className="each-post-container">
       <div className="vote-container">
-        <div className="arrow-icon upvote" onClick={() => handleUpvote(post)}>
+        <div
+          className={`arrow-icon upvote ${token && upvote ? "upvote-on" : ""}`}
+          onClick={handleClickUpvote}
+        >
           <TbArrowBigUp />
         </div>
         <div className="number-vote">
           {post.upvotes.length - post.downvotes.length}
         </div>
         <div
-          className="arrow-icon downvote"
-          onClick={() => handleDownvote(post)}
+          className={`arrow-icon downvote ${
+            token && downvote ? "downvote-on" : ""
+          }`}
+          onClick={handleClickDownvote}
         >
           <TbArrowBigDown />
         </div>
