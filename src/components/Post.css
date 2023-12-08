@@ -10,15 +10,22 @@
   align-items: center;
   background-color: #ffffff;
   width: 76vw;
+  min-width: 320px;
   min-height: 100vh;
   padding: 30px;
   border-top: 1px solid #dae0e6;
+  @media (max-width: 425px) {
+    padding: 0;
+  }
 }
 
 .child-post {
   width: 75%;
   padding-bottom: 20px;
   border-bottom: solid 10px #dae0e6;
+  @media (max-width: 425px) {
+    width: 95%;
+  }
 }
 
 .comment-box {
@@ -29,6 +36,9 @@
   width: 70%;
   border-bottom: 1px solid #dae0e6;
   padding-bottom: 20px;
+  @media (max-width: 425px) {
+    width: 95%;
+  }
 }
 
 .comment-form {
@@ -61,4 +71,7 @@
 
 .all-comment-container {
   width: 70%;
+  @media (max-width: 425px) {
+    width: 95%;
+  }
 }

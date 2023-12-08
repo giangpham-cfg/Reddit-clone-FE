@@ -7,16 +7,12 @@ export default function App() {
   const [subreddits, setSubreddits] = useState([]);
   const [token, setToken] = useState("");
   const [user, setUser] = useState({});
-  // const [isUpvote, setIsUpvote] = useState(false);
-  // const [isDownvote, setIsDownvote] = useState(false);
-
   const [posts, setPosts] = useState([]);
 
   async function fetchPosts() {
     const res = await fetch(`${API}/posts`);
     const info = await res.json();
     setPosts(info.posts);
-
     console.log(info);
   }
 
@@ -46,7 +42,6 @@ export default function App() {
       },
     });
     const info = await res.json();
-    // console.log("check", info);
     if (info.success) {
       setUser(info.user);
     }

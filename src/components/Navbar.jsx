@@ -39,7 +39,7 @@ export default function Navbar({ setToken, user, setUser }) {
           <span className="home-icon">
             <IoMdHome />
           </span>
-          Home
+          <div className="home-text">Home</div>
         </Link>
         <form action="submit">
           <div className="input">

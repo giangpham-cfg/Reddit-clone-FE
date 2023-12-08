@@ -1,6 +1,7 @@
 .navbar-container {
   background-color: #ffffff;
   display: flex;
+  gap: 5px;
   align-items: center;
   justify-content: space-around;
   padding: 5px 0;
@@ -11,6 +12,9 @@
   background-color: #f6f7f8;
   font-size: 12px;
   outline: none;
+  @media (max-width: 425px) {
+    width: 80px;
+  }
 }
 
 .input {
@@ -23,6 +27,9 @@
   background-color: #f6f7f8;
   border-radius: 30px;
   height: 40px;
+  @media (max-width: 425px) {
+    width: 125px;
+  }
 }
 
 .input:hover {
@@ -33,6 +40,9 @@
   color: #757575;
   font-size: 30px;
   padding-bottom: 5px;
+  @media (max-width: 425px) {
+    font-size: 20px;
+  }
 }
 
 .link {
@@ -45,6 +55,11 @@
 
 .home-icon {
   font-size: 30px;
+}
+.home-text {
+  @media (max-width: 425px) {
+    display: none;
+  }
 }
 
 .login {
@@ -67,12 +82,19 @@
   gap: 20px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
+  @media (max-width: 425px) {
+    gap: 5px;
+    font-size: 12px;
+  }
 }
 
 .logout {
   text-decoration: none;
   color: #1c1c1c;
   font-size: 13px;
+  @media (max-width: 425px) {
+    font-size: 12px;
+  }
 }
 
 .add-post {
@@ -80,6 +102,10 @@
   line-height: 0;
   display: flex;
   align-items: center;
+  @media (max-width: 425px) {
+    font-size: 25px;
+    margin: 0 5px;
+  }
 }
 
 .add-post:hover {
@@ -91,4 +117,7 @@
   font-size: 13px;
   font-family: Arial, Helvetica, sans-serif;
   padding-right: 10px;
+  @media (max-width: 425px) {
+    display: none;
+  }
 }
