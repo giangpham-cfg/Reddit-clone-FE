@@ -1,5 +1,8 @@
 .modal-container {
   width: 50% !important;
+  @media (max-width: 425px) {
+    width: 95% !important;
+  }
 }
 
 .subreddit-name-form {
