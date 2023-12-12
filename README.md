@@ -4,12 +4,12 @@
 
 ## :camera: Screen Shots
 
-![image](./src/assets/Screenshot 1.png)
-![image](./src/assets/Screenshot 2.png)
-![image](./src/assets/Screenshot 3.png)
-![image](./src/assets/Screenshot 4.png)
-![image](./src/assets/Screenshot 5.png)
-![image](./src/assets/Screenshot 6.png)
+![image](./src/assets/Screenshot%201.png)
+![image](./src/assets/Screenshot%202.png)
+![image](./src/assets/Screenshot%203.png)
+![image](./src/assets/Screenshot%204.png)
+![image](./src/assets/Screenshot%205.png)
+![image](./src/assets/Screenshot%206.png)
 
 ## :computer: Technologies Used
 
